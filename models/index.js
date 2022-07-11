@@ -1,7 +1,5 @@
-//the MODEL of the MVC, define all data logic and relations here
+const Users = require('./Users');
+const Posts = require('./Posts');
+const Comments = require('./Comments');
 
-//import the example model
-const Example = require('./Example');
-
-
-module.exports = { Example };
+module.exports = { Users, Posts, Comments };
