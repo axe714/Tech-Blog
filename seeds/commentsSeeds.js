@@ -1,14 +1,18 @@
-[
+const { Comments } = require('../models');
+
+const commentsData = [
   {
-    "column1": "1",
-    "column2": "2"
+    user_id: 3,
+    post_id: 1,
+    comment_content: 'This comment is on the first post. DID IT WORK?',
   },
   {
-    "column1": "111",
-    "column2": "222"
+    user_id: 4,
+    post_id: 2,
+    comment_content: 'This comment is on the second post... IT WORKED RIGHT???',
   },
-  {
-    "column1": "11111",
-    "column2": "222222"
-  }
-]
+];
+
+const commentsSeeds = () => Comments.bulkCreate(commentsData);
+
+module.exports = commentsSeeds;

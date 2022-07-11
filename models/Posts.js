@@ -11,6 +11,14 @@ Posts.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'users',
+        key: 'user_id',
+      },
+    },
     post_title: {
       //STRING is capped at 255 characters
       type: DataTypes.STRING,
