@@ -2,8 +2,11 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
+const singleBlogHandlebars = require('./singleBlogHandlebars');
 
-router.use('/', homeRoutes);
+const handleBars = [homeRoutes, singleBlogHandlebars];
+
+router.use('/', handleBars);
 router.use('/api', apiRoutes);
 
 module.exports = router;

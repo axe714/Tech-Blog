@@ -19,12 +19,12 @@ Comments.init(
         key: 'user_id',
       },
     },
-    post_id: {
+    blog_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'posts',
-        key: 'post_id',
+        model: 'blogs',
+        key: 'blog_id',
       },
     },
     comment_content: {

@@ -14,9 +14,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:user_id', async (req, res) => {
   try {
-    const userById = await Users.findByPk(req.params.id, {
+    const userById = await Users.findByPk(req.params.user_id, {
       include: [{ all: true, nested: true }],
     });
     if (!userById) {

@@ -1,15 +1,27 @@
 //These are all the view routes for your application
 const router = require('express').Router();
+const { Blogs, Users } = require('../models');
 
-//when a GET request is received on the root(/) route,
-//render the home.handlebars view
-router.get('/', (req, res) => {
-  res.render('home');
+//renders all blogs on homepage
+router.get('/', async (req, res) => {
+  try {
+    const blogsData = await Blogs.findAll({
+      include: [{ model: Users }],
+    });
+
+    const blogs = blogsData.map((blogs) =>
+    blogs.get({ plain: true })
+    );
+    res.render('home', {
+      blogs,
+    })
+  } catch (err) {
+    return res.status(500).json(err);
+  }
 });
 
-router.get('/otherpage', (req, res) => {
-  //this will render the view otherpage.handlebars
-  res.render('otherpage');
-});
+// router.get('/blogs', (req, res) => {
+//   res.render('viewBlog');
+// });
 
 module.exports = router;
