@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 /* NAV BAR */
 nav {
   display: flex;
@@ -46,6 +50,10 @@ footer {
 .home-page-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .home-blog-container {
@@ -53,7 +61,8 @@ footer {
   width: 100%;
   height: 50vh;
   background-color: lightslategray;
-  outline: 5px solid black;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  margin: 2vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -90,19 +99,18 @@ footer {
 .single-blog-main-container {
   display: flex;
   flex-direction: column;
+  padding: 2vh;
 }
 
 .single-blog-container {
   display: flex;
-  width: 100%;
   height: 50vh;
   background-color: lightslategray;
-  outline: 5px solid black;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-
 
 .single-blog-title-header {
   padding-top: 5vh;
@@ -122,10 +130,13 @@ footer {
 }
 
 .single-blog-footer {
-  width: 75%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+}
+
+.single-blog-container, .comment-main-container {
+  margin: 5vh;
 }
 
 .comment-main-container {
@@ -134,10 +145,10 @@ footer {
 }
 
 .comment-container {
-  height: 35vh;
+  height: 20vh;
   padding-top: 3vh;
   background-color: #B7D1DA;
-  outline: 5px solid black;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 /* LOGIN/SIGNUP PAGE */
