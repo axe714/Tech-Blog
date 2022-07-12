@@ -43,5 +43,46 @@ footer {
 }
 
 /* HOME PAGE */
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-blog-container {
+  width: 100%;
+  height: 50vh;
+  background-color: lightslategray;
+  outline: 10px solid black;
+}
+
+.blog-title {
+  font-size: 50px;
+  font-weight: bolder;
+  color: #F0FFF0;
+  text-align: center;
+}
+
+.blog-date {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #F0FFF0;
+  text-align: center;
+}
+
+.blog-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: auto;
+}
+
+.blog-container-footer {
+  display: flex;
+  justify-content: center;
+}
+
+
+
 
 
