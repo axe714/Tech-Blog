@@ -14,7 +14,6 @@ router.get('/blogs/:blog_id', async (req, res) => {
     res.render('singleBlog', {
       blog,
     });
-    console.log(blog);
   } catch (err) {
     return res.status(500).json(err);
   }
