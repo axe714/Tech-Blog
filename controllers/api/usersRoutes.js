@@ -30,6 +30,44 @@ router.get('/:user_id', async (req, res) => {
   }
 });
 
-router.post
+//post route for logging in 
+router.post('/login', async (req, res) => {
+  try {
+    // Find the user who matches the posted e-mail address
+    const userData = await Users.findOne({
+      where: { username: req.body.username },
+    });
+
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Unable to locate an account with this username.' });
+      return;
+    }
+
+    // Verify the posted password with the password store in the database
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      userData.password
+    );
+
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Invalid password. Please try again!' });
+      return;
+    }
+
+    // Create session variables based on the logged in user
+    req.session.save(() => {
+      req.session.user_id = userData.user_id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 module.exports = router;
