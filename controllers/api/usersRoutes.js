@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const { Users } = require('../../models');
+const bcrypt = require('bcrypt');
 
 //end point /api/users
 
+//get all users
 router.get('/', async (req, res) => {
   try {
     const usersData = await Users.findAll({
@@ -14,6 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//get one user by user id
 router.get('/:user_id', async (req, res) => {
   try {
     const userById = await Users.findByPk(req.params.user_id, {
@@ -30,10 +33,10 @@ router.get('/:user_id', async (req, res) => {
   }
 });
 
-//post route for logging in 
+//post route for logging in
 router.post('/login', async (req, res) => {
   try {
-    // Find the user who matches the posted e-mail address
+    // Find the user who matches the posted username
     const userData = await Users.findOne({
       where: { username: req.body.username },
     });
@@ -52,9 +55,7 @@ router.post('/login', async (req, res) => {
     );
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Invalid password. Please try again!' });
+      res.status(400).json({ message: 'Invalid password. Please try again!' });
       return;
     }
 
