@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // Verify the posted password with the password store in the database
+    // Verify the posted password with the password stored in the database
     const validPassword = await bcrypt.compare(
       req.body.password,
       userData.password
@@ -68,6 +68,19 @@ router.post('/login', async (req, res) => {
     });
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+//post route for signing up
+router.post('/', async (req, res) => {
+  try {
+    const createUser = await Users.create({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    res.status(200).json(createUser);
+  } catch (err) {
+    console.log(err);
   }
 });
 

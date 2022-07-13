@@ -16,9 +16,24 @@ const loginFormHandler = async (e) => {
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
+
       if (response.ok) {
-        return console.log('You just logged in')
-        // return document.location.replace('/');
+        return document.location.replace('/');
+      }
+
+      const modal = document.querySelector('#myModal');
+      const auth = document.querySelector('.modal-btn')
+      const closeModal = document.querySelector('.close-modal');
+      
+
+      if (!response.ok) {
+        auth.onclick = () => {
+          modal.style.display = 'block';
+        };
+      }
+
+      closeModal.onclick = () => {
+        modal.style.display = "none"
       }
     } catch (err) {
       console.log(err);

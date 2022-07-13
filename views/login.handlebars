@@ -14,15 +14,22 @@
         <input class='form-input' type='password' id='password-login' />
       </div>
       <div class='form-group'>
-        <button type='submit'>Login</button>
+        <button class='modal-btn' type='submit'>Login</button>
       </div>
     </form>
-
     <p>
       Don't have an account? Sign up
-      <a href='/signup'>here.</a>
+      <a id='signup-link' href='/signup'>here.</a>
     </p>
   </div>
 </div>
 
-<script src="./js/login.js"></script>
+<!-- Modal for invalid authentication -->
+<div id='myModal' class='modal'>
+  <div class='modal-content'>
+    <p>Unable to verify account information. Please try again.</p>
+    <button class='close-modal'>Try Again</button>
+  </div>
+</div>
+
+<script src='./js/login.js'></script>
