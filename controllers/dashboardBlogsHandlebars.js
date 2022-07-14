@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Blogs } = require('../models');
 const loggedIn = require('../utils/auth');
 
+//renders all users blog at user's dashboard
 router.get('/dashboard', loggedIn, async (req, res) => {
   try {
     const userBlogs = await Blogs.findAll({
@@ -11,7 +12,6 @@ router.get('/dashboard', loggedIn, async (req, res) => {
       logged_in: req.session.logged_in,
       userBlogs,
     });
-    console.log(userBlogs);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

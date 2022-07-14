@@ -20,9 +20,6 @@ const commentHandler = async (e) => {
         headers: { 'Content-Type': 'application/json' },
       });
 
-      console.log(blogId)
-      console.log(commentContent);
-
       if (response.ok) {
         return document.location.replace(`/blogs/${blogId}`);
       }
