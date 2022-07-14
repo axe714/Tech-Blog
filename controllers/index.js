@@ -6,6 +6,8 @@ const singleBlogHandlebars = require('./singleBlogHandlebars');
 const dashboardBlogsHandlebars = require('./dashboardBlogsHandlebars');
 const postBlogHandlebars = require('./postBlogHandlebars');
 const renderBlogCreation = require('./renderBlogCreation')
+const renderCommentCreation = require('./renderCommentCreation')
+const postCommentHandlebars = require('./postCommentHandlebars')
 
 const handleBars = [
   homeRoutes,
@@ -13,6 +15,8 @@ const handleBars = [
   dashboardBlogsHandlebars,
   renderBlogCreation,
   postBlogHandlebars,
+  renderCommentCreation,
+  postCommentHandlebars,
 ];
 
 router.use('/', handleBars);

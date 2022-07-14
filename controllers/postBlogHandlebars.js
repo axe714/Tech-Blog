@@ -5,7 +5,7 @@ const loggedIn = require('../utils/auth');
 const today = new Date();
 const dateFormatter = '"' + today.toISOString().slice(0, 10) + '"';
 
-router.post('/blog/create', loggedIn, async (req, res) => {
+router.post('/comment/create', loggedIn, async (req, res) => {
   try {
     const createBlog = await Blogs.create({
       user_id: req.session.user_id,
@@ -13,9 +13,10 @@ router.post('/blog/create', loggedIn, async (req, res) => {
       blog_content: req.body.blogContent,
       creation_date: dateFormatter
     });
+    // console.log(createBlog)
     return res.status(200).json(createBlog);
   } catch (err) {
-    return res.status(500).json({
+    return res.status(400).json({
       message: 'Unable to create blog',
     });
   }
