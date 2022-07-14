@@ -50,9 +50,9 @@ footer {
   text-align: center;
 }
 
-/* HOME PAGE */
+/* HOME PAGE/DASHBOARD */
 
-.home-page-container {
+.home-dashboard-page-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,7 +61,7 @@ footer {
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.home-blog-container {
+.home-dashboard-blog-container {
   display: flex;
   width: 100%;
   height: 50vh;
