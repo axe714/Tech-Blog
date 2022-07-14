@@ -71,6 +71,19 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/logout', (req, res) => {
+  try {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } 
+ } catch (err) {
+    res.status(404).end()
+    console.log(err);
+  }
+});
+
 //post route for signing up
 router.post('/signup', async (req, res) => {
   try {
