@@ -6,8 +6,8 @@ const loginFormHandler = async (e) => {
   const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
-  console.log('USERNAME---', username);
-  console.log('PASSWORD----', password);
+  // console.log('USERNAME ---- ', username);
+  // console.log('PASSWORD ----', password);
 
   if (username && password) {
     try {
@@ -17,24 +17,28 @@ const loginFormHandler = async (e) => {
         headers: { 'Content-Type': 'application/json' },
       });
 
+      const modal = document.querySelector('#myModal');
+      const auth = document.querySelector('.modal-btn');
+      const closeModal = document.querySelector('.close-modal');
+      const modalMsg = document.querySelector('#modal-content-text');
+
       if (response.ok) {
         return document.location.replace('/');
       }
 
-      const modal = document.querySelector('#myModal');
-      const auth = document.querySelector('.modal-btn')
-      const closeModal = document.querySelector('.close-modal');
-      
-
-      if (!response.ok) {
-        auth.onclick = () => {
-          modal.style.display = 'block';
-        };
-      }
+      auth.onclick = () => {
+        modalMsg.textContent =
+          'Invalid username or password. Please try again.';
+        closeModal.textContent = 'Close';
+        return (modal.style.display = 'block');
+      };
 
       closeModal.onclick = () => {
-        modal.style.display = "none"
-      }
+        modalMsg.textContent = '';
+        closeModal.textContent = '';
+        return (modal.style.display = 'none');
+      };
+      
     } catch (err) {
       console.log(err);
     }

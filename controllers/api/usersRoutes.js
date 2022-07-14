@@ -72,15 +72,17 @@ router.post('/login', async (req, res) => {
 });
 
 //post route for signing up
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
   try {
     const createUser = await Users.create({
       username: req.body.username,
       password: req.body.password,
     });
-    res.status(200).json(createUser);
+    return res.status(200).json(createUser);
   } catch (err) {
-    console.log(err);
+    return res.status(500).json({
+      message: 'Unable to create user',
+    });
   }
 });
 
