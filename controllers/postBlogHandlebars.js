@@ -5,7 +5,7 @@ const loggedIn = require('../utils/auth');
 const today = new Date();
 const dateFormatter = '"' + today.toISOString().slice(0, 10) + '"';
 
-router.post('/comment/create', loggedIn, async (req, res) => {
+router.post('/blog/create', loggedIn, async (req, res) => {
   try {
     const createBlog = await Blogs.create({
       user_id: req.session.user_id,

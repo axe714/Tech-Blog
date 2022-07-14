@@ -14,8 +14,8 @@ const commentHandler = async (e) => {
       const response = await fetch('/comment/create', {
         method: 'POST',
         body: JSON.stringify({
-          comment_content: commentContent,
           blog_id: blogId,
+          commentContent,
         }),
         headers: { 'Content-Type': 'application/json' },
       });
@@ -24,7 +24,7 @@ const commentHandler = async (e) => {
       console.log(commentContent);
 
       if (response.ok) {
-        return document.location.replace(`/`);
+        return document.location.replace(`/blogs/${blogId}`);
       }
     } catch (err) {
       console.log(err);

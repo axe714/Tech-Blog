@@ -13,13 +13,6 @@ const blogsData = [
     blog_content: 'Please tell me this actually works. Please for the love of god!',
     creation_date: '2022-06-14',
   },
-  {
-    blog_id: 55,
-    user_id: 2,
-    blog_title: 'Testing out this title...',
-    blog_content: 'Please tell me this actually works. Please for the love of god!',
-    creation_date: '2022-06-14',
-  },
 ];
 
 const seedBlogs = () => Blogs.bulkCreate(blogsData);
