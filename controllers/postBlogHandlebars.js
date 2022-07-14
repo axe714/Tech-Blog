@@ -3,7 +3,7 @@ const { Blogs } = require('../models');
 const loggedIn = require('../utils/auth');
 
 const today = new Date();
-const dateFormatter = today.toISOString().slice(0, 10) + '"';
+const dateFormatter = '"' + today.toISOString().slice(0, 10) + '"';
 
 router.post('/blog/create', loggedIn, async (req, res) => {
   try {
@@ -13,7 +13,6 @@ router.post('/blog/create', loggedIn, async (req, res) => {
       blog_content: req.body.blogContent,
       creation_date: dateFormatter
     });
-    console.log(createBlog)
     return res.status(200).json(createBlog);
   } catch (err) {
     return res.status(500).json({

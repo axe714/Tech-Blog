@@ -16,25 +16,13 @@ const postBlogHandler = async (e) => {
         }),
         headers: { 'Content-Type': 'application/json' },
       });
-      console.log('TITLE ---- ', blogTitle);
-      console.log('CONTENT ----', blogContent);
+      // console.log('TITLE ---- ', blogTitle);
+      // console.log('CONTENT ----', blogContent);
 
       if (response.ok) {
         return document.location.replace('/dashboard');
       }
-
-    //   auth.onclick = () => {
-    //     modalMsg.textContent =
-    //       'Please make sure all fields are filled, username is unique, and password is atleast 8 characters long.';
-    //     closeModal.textContent = 'Close';
-    //     return (modal.style.display = 'block');
-    //   };
-
-    //   closeModal.onclick = () => {
-    //     modalMsg.textContent = '';
-    //     closeModal.textContent = '';
-    //     return (modal.style.display = 'none');
-    //   };
+      
     } catch (err) {
       console.log(err);
     }
