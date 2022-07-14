@@ -217,6 +217,36 @@ footer {
   cursor: pointer;
 }
 
+/* POST BLOG FORM */
+
+
+.blog-form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh;
+  width: 100%;
+  font-weight: bolder;
+}
+
+.blog-form-group label {
+  padding-bottom: 2vh;
+}
+
+#blog-title {
+  width: 60%;
+  height: 5vh;
+}
+
+#blog-content {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: start;
+  width: 100%;
+  height: 25vh;
+}
+
 
 
 
