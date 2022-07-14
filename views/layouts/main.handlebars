@@ -17,7 +17,13 @@
       <nav>
         <ul>
           <li><a href='/'>Home</a></li>
+          {{#if logged_in}}
+          <li><a href='/#'>Dashboard</a></li>
+          <li><a href='/#'>Post Blog</a></li>
+          <li><a href='/#'>Logout</a></li>
+          {{else}}
           <li><a href='/login'>Login</a></li>
+          {{/if}}
         </ul>
       </nav>
     </header>
