@@ -152,7 +152,8 @@ footer {
 
 .comment-container {
   height: 20vh;
-  padding-top: 3vh;
+  padding: 3vh;
+  margin: 2vh;
   background-color: #B7D1DA;
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }

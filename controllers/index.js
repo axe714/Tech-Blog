@@ -2,21 +2,23 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api');
 const homeRoutes = require('./homeRoutes');
-const singleBlogHandlebars = require('./singleBlogHandlebars');
-const dashboardBlogsHandlebars = require('./dashboardBlogsHandlebars');
-const postBlogHandlebars = require('./postBlogHandlebars');
+const renderSingleBlog = require('./renderSingleBlog');
+const renderDashboard = require('./renderDashboard');
+const postBlogRoute = require('./postBlogRoute');
 const renderBlogCreation = require('./renderBlogCreation')
 const renderCommentCreation = require('./renderCommentCreation')
-const postCommentHandlebars = require('./postCommentHandlebars')
+const postCommentRoute = require('./postCommentRoute')
+const deleteBlogRoute = require('./deleteBlogRoute')
 
 const handleBars = [
   homeRoutes,
-  singleBlogHandlebars,
-  dashboardBlogsHandlebars,
+  renderSingleBlog,
+  renderDashboard,
   renderBlogCreation,
-  postBlogHandlebars,
+  postBlogRoute,
   renderCommentCreation,
-  postCommentHandlebars,
+  postCommentRoute,
+  deleteBlogRoute,
 ];
 
 router.use('/', handleBars);
