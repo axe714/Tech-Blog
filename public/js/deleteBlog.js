@@ -1,4 +1,4 @@
-const deleteBtn = document.querySelector('#delete-blog-btn');
+const deleteBtn = document.querySelectorAll('.delete-blog-btn');
 
 const deleteBlogHandler = async (id) => {
   try {
@@ -20,7 +20,10 @@ const deleteBlogHandler = async (id) => {
   }
 };
 
-deleteBtn.onclick = () => {
-  blog_id = deleteBtn.dataset.id;
-  deleteBlogHandler(blog_id);
+for (let i = 0; i < deleteBtn.length; i++) {
+  deleteBtn[i].onclick = () => {
+    blog_id = deleteBtn[i].dataset.id;
+    deleteBlogHandler(blog_id);
+  }
 }
+
