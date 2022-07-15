@@ -20,4 +20,7 @@ const deleteBlogHandler = async (id) => {
   }
 };
 
-deleteBtn.addEventListener('click', deleteBlogHandler);
+deleteBtn.onclick = () => {
+  blog_id = deleteBtn.dataset.id;
+  deleteBlogHandler(blog_id);
+}
