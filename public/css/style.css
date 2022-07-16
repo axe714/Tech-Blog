@@ -96,11 +96,6 @@ footer {
   width: auto;
 }
 
-.blog-container-footer {
-  display: flex;
-  justify-content: center;
-}
-
 /* SINGLE BLOG PAGE */
 .single-blog-main-container {
   display: flex;
