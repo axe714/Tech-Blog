@@ -13,7 +13,6 @@ router.post('/blog/create', loggedIn, async (req, res) => {
       blog_content: req.body.blogContent,
       creation_date: dateFormatter
     });
-    // console.log(createBlog)
     return res.status(200).json(createBlog);
   } catch (err) {
     return res.status(400).json({

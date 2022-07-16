@@ -6,7 +6,7 @@ router.put('/blog/update/:blog_id', loggedIn, async (req, res) => {
   try {
     const singleBlog = await Blogs.findOne({
       where: {
-        blog_id: req.params.blog_id
+        blog_id: req.params.blog_id,
       },
     });
 
@@ -15,9 +15,11 @@ router.put('/blog/update/:blog_id', loggedIn, async (req, res) => {
       blog_content: req.body.blogContent,
     });
 
-    res.status(200).json('User updated!');
+    res.status(200).json('Blog updated!');
   } catch (err) {
-    console.log(err);
+    return res.status(400).json({
+      message: 'Unable to update blog',
+    });
   }
 });
 

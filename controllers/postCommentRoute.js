@@ -11,8 +11,8 @@ router.post('/comment/create', loggedIn, async (req, res) => {
     });
     return res.status(200).json(createBlog);
   } catch (err) {
-    return res.status(500).json({
-      message: 'Unable to create blog',
+    return res.status(400).json({
+      message: 'Unable to post comment on blog',
     });
   }
 });
