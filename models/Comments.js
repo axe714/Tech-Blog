@@ -31,6 +31,11 @@ Comments.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    comment_date: {
+      type: DataTypes.DATEONLY,
+      //'YYYY-MM-DD'
+      allowNull: false,
+    },
   },
   {
     sequelize,

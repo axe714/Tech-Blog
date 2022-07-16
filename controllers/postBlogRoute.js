@@ -11,7 +11,7 @@ router.post('/blog/create', loggedIn, async (req, res) => {
       user_id: req.session.user_id,
       blog_title: req.body.blogTitle,
       blog_content: req.body.blogContent,
-      creation_date: dateFormatter
+      creation_date: dateFormatter,
     });
     return res.status(200).json(createBlog);
   } catch (err) {
