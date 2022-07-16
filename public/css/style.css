@@ -12,6 +12,14 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
+label {
+  font-size: 20px;
+}
+
 /* NAV BAR */
 nav {
   display: flex;
@@ -24,9 +32,9 @@ nav {
 }
 
 nav li {
-  color: #F0FFF0;
+  color: #f0fff0;
   background-color: #141414;
-  list-style-type: none; 
+  list-style-type: none;
   display: inline-block;
   margin: 0px 50px 0px 50px;
 }
@@ -46,20 +54,21 @@ nav li:hover {
 footer {
   bottom: 0;
   width: 100%;
-  color: #F0FFF0;
-  background-color: #201E1F;
+  color: #f0fff0;
+  background-color: #201e1f;
   text-align: center;
+  position: fixed;
 }
 
 /* HOME PAGE/DASHBOARD */
 
 .home-dashboard-page-container {
+  height: 100vh auto;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
   padding: 5vh;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .home-dashboard-blog-container {
@@ -67,7 +76,6 @@ footer {
   width: 100%;
   height: 50vh;
   background-color: lightslategray;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
   margin: 2vh;
   align-items: center;
   justify-content: center;
@@ -77,14 +85,14 @@ footer {
 .blog-title {
   font-size: 50px;
   font-weight: bolder;
-  color: #F0FFF0;
+  color: #f0fff0;
   text-align: center;
 }
 
 .blog-date {
   font-size: 20px;
   font-weight: bolder;
-  color: #F0FFF0;
+  color: #f0fff0;
   text-align: center;
 }
 
@@ -96,6 +104,39 @@ footer {
   width: auto;
 }
 
+#blog-container-footer {
+  display: flex;
+  align-items: flex-end;
+  height: 15vh;
+}
+
+.delete-blog-btn, .update-blog-btn {
+  width: 8rem;
+  padding: .5vh;
+  font-size: 15px;
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  border-radius: 5%;
+  margin: 1vh;
+}
+
+.delete-blog-btn:hover {
+  background-color: #563635;
+  color: white;
+}
+
+.update-blog-btn:hover {
+  background-color: #8C8A93;
+  color: white;
+}
+
+.blog-title:hover {
+  transform: scale(1.05);
+  color: #FFF3F0;
+}
+
+
 /* SINGLE BLOG PAGE */
 .single-blog-main-container {
   display: flex;
@@ -105,25 +146,34 @@ footer {
 
 .single-blog-container {
   display: flex;
-  height: 50vh;
+  height: fit-content;
   background-color: lightslategray;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
 .single-blog-title-header {
-  padding-top: 5vh;
   font-size: 20px;
   font-weight: bolder;
-  color: #F0FFF0;
+  color: #f0fff0;
   text-align: center;
 }
 
-.single-blog-content {
+#single-blog-title {
   padding-top: 5vh;
-  height: 25vh;
+  padding-bottom: 0;
+}
+
+#single-blog-username {
+  padding-top: 0;
+}
+
+.single-blog-content {
+  display: inline;
+  padding-top: 5vh;
+  height: fit-content;
+  width: fit-content;
   font-size: 20px;
   font-weight: bolder;
   color: black;
@@ -134,10 +184,13 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  padding: 2vh;
 }
 
-.single-blog-container, .comment-main-container {
+.single-blog-container,
+.comment-main-container {
   margin: 5vh;
+  word-break: break-all;
 }
 
 .comment-main-container {
@@ -146,16 +199,43 @@ footer {
 }
 
 .comment-container {
-  height: 20vh;
+  height: fit-content;
   padding: 3vh;
   margin: 2vh;
-  background-color: #B7D1DA;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background-color: #b7d1da;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.comment-content-container {
+  resize: both;
+  display: inline-flex;
+  height: auto;
+  width: auto;
+  overflow-wrap: break-word;
+}
+
+.single-blog-comment-btn {
+  width: 8rem;
+  padding: .5vh;
+  font-size: 15px;
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  border-radius: 5%;
+  margin: 1vh;
+}
+
+.single-blog-comment-btn:hover {
+  background-color: #8C8A93;
+  color: white;
 }
 
 /* LOGIN/SIGNUP PAGE */
 
-#login-main-container, #signup-main-container {
+#login-main-container,
+#signup-main-container {
+  font-size: 20px;
+  padding-top: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -167,7 +247,7 @@ footer {
 
 #signup-link {
   font-weight: bolder;
-  transition: 0.1s
+  transition: 0.1s;
 }
 
 #signup-link:hover {
@@ -175,17 +255,34 @@ footer {
   font-weight: bolder;
 }
 
+.modal-btn {
+  width: 5rem;
+  padding: .5vh;
+  font-size: 15px;
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  border-radius: 5%;
+
+}
+
+.modal-btn:hover {
+  background-color: #9DBBAE;
+  color: black;
+}
+
+
 /* modal for invalid authentication on login/signup page */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -194,10 +291,10 @@ footer {
   align-items: center;
   flex-direction: column;
   background-color: #fefefe;
-  margin: 15% auto; 
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; 
+  width: 80%;
 }
 
 .close-modal {
@@ -214,8 +311,7 @@ footer {
   cursor: pointer;
 }
 
-/* POST BLOG FORM */
-
+/* POST/UPDATE BLOG FORM */
 
 .blog-form-group {
   display: flex;
@@ -234,6 +330,7 @@ footer {
 #blog-title {
   width: 60%;
   height: 5vh;
+  padding: 0vh 2vh;
 }
 
 #blog-content {
@@ -242,10 +339,63 @@ footer {
   justify-content: start;
   width: 100%;
   height: 25vh;
+  padding: 3vh;
+}
+
+.post-blog-btn, #edit-blog-btn {
+  width: 8rem;
+  padding: .5vh;
+  font-size: 15px;
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  border-radius: 5%;
+  margin: 1vh;
+}
+
+.post-blog-btn:hover, #edit-blog-btn:hover {
+  background-color: #6A8E7F;
+  color: white;
 }
 
 
+/* POST COMMENT FORM */
 
+.comment-form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh;
+  font-weight: bolder;
+}
 
+#comment-content {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: start;
+  width: 100%;
+  height: 25vh;
+  padding: 3vh;
+  margin-top: 3vh;
+}
 
+#comment-btn-container {
+  padding: 2vh;
+}
 
+.post-comment-btn {
+  width: 8rem;
+  padding: .5vh;
+  font-size: 15px;
+  background-color: white;
+  color: black;
+  border: 1px solid #555555;
+  border-radius: 5%;
+  margin: 1vh;
+}
+
+.post-comment-btn:hover {
+  background-color: #6A8E7F;
+  color: black;
+}
