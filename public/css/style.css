@@ -329,12 +329,14 @@ footer {
 }
 
 #blog-title {
+  font-size: 20px;
   width: 60%;
   height: 5vh;
   padding: 0vh 2vh;
 }
 
 #blog-content {
+  font-size: 20px;
   display: inline-flex;
   align-items: flex-start;
   justify-content: start;
@@ -372,6 +374,7 @@ footer {
 }
 
 #comment-content {
+  font-size: 20px;
   display: inline-flex;
   align-items: flex-start;
   justify-content: start;
