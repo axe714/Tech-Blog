@@ -25,7 +25,8 @@ const signupFormHandler = async (e) => {
       const modalMsg = document.querySelector('#modal-content-text');
 
       if (response.ok) {
-        return document.location.replace('/login')
+        document.location.reload()
+        return document.location.replace('/')
       }
 
       auth.onclick = () => {

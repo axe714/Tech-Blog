@@ -73,13 +73,13 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) => {
   try {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } 
- } catch (err) {
-    res.status(404).end()
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    }
+  } catch (err) {
+    res.status(404).end();
     console.log(err);
   }
 });
@@ -91,7 +91,11 @@ router.post('/signup', async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-    return res.status(200).json(createUser);
+    req.session.save(() => {
+      req.session.user_id = createUser.user_id;
+      req.session.logged_in = true;
+      res.status(200).json(createUser)
+    });
   } catch (err) {
     return res.status(500).json({
       message: 'Unable to create user',
