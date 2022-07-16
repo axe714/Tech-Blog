@@ -1,9 +1,24 @@
-  <div class='home-dashboard-blog-container'>
-    <div class='home-dashboard-blog-title-header'>
-      <a id='blog-title-link' href='/blogs/{{{dataValues.blog_id}}}'><h1 class='blog-title'>{{{dataValues.blog_title}}}</h1><p class="blog-date"> Posted on {{{dataValues.creation_date}}}</p></a>
-    </div>
-    <div id='blog-container-footer'>
-        <button data-id="{{dataValues.blog_id}}" type="delete" class="delete-blog-btn">Delete Blog</button>
-        <a href='/blog/update/{{dataValues.blog_id}}'><button data-id="{{dataValues.blog_id}}" type="update" class="update-blog-btn">Edit Blog</button></a>
-    </div>
+<div class='home-dashboard-blog-container'>
+  <div class='home-dashboard-blog-title-header'>
+    <a id='blog-title-link' href='/blogs/{{{dataValues.blog_id}}}'><h1
+        class='blog-title'
+      >{{{dataValues.blog_title}}}</h1>
+      <p>{{{username}}}</p>
+      <p class='blog-date'>
+        Written by You
+        <br />
+        {{{dataValues.creation_date}}}</p></a>
   </div>
+  <div id='blog-container-footer'>
+    <button
+      data-id='{{dataValues.blog_id}}'
+      type='delete'
+      class='delete-blog-btn'
+    >Delete Blog</button>
+    <a href='/blog/update/{{dataValues.blog_id}}'><button
+        data-id='{{dataValues.blog_id}}'
+        type='update'
+        class='update-blog-btn'
+      >Edit Blog</button></a>
+  </div>
+</div>

@@ -97,6 +97,7 @@ footer {
 }
 
 .blog-content-container {
+  overflow-wrap: break-word;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,7 +172,7 @@ footer {
 
 .single-blog-content {
   display: inline;
-  padding-top: 5vh;
+  padding: 5vh;
   height: fit-content;
   width: fit-content;
   font-size: 20px;
@@ -190,7 +191,7 @@ footer {
 .single-blog-container,
 .comment-main-container {
   margin: 5vh;
-  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .comment-main-container {

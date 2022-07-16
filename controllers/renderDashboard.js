@@ -12,6 +12,7 @@ router.get('/dashboard', loggedIn, async (req, res) => {
       logged_in: req.session.logged_in,
       userBlogs,
     });
+    console.log(userBlogs)
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
