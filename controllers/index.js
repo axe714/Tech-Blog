@@ -9,6 +9,8 @@ const renderBlogCreation = require('./renderBlogCreation')
 const renderCommentCreation = require('./renderCommentCreation')
 const postCommentRoute = require('./postCommentRoute')
 const deleteBlogRoute = require('./deleteBlogRoute')
+const renderEditBlogForm = require('./renderEditBlogForm')
+const updateBlogRoute = require('./updateBlogRoute')
 
 const handleBars = [
   homeRoutes,
@@ -19,6 +21,8 @@ const handleBars = [
   renderCommentCreation,
   postCommentRoute,
   deleteBlogRoute,
+  renderEditBlogForm,
+  updateBlogRoute,
 ];
 
 router.use('/', handleBars);

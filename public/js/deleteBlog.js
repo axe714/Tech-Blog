@@ -26,4 +26,3 @@ for (let i = 0; i < deleteBtn.length; i++) {
     deleteBlogHandler(blog_id);
   }
 }
-

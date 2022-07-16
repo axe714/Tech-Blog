@@ -1,0 +1,17 @@
+<div class='post-blog-main-container'>
+  <form id='blog-form'>
+    <div class='blog-form-group'>
+      <label for='blog-title'>What is your blog's title?</label>
+      <input class='form-input' type='text' class='post-blog-title-box' value='{{{blog.dataValues.blog_title}}}' id='blog-title' />
+    </div>
+    <div class='blog-form-group'>
+      <label for='blog-content'>What is your blog's content?</label>
+      <textarea class='form-input' type='text' class='post-blog-content-box' id='blog-content' form="blog-form">{{{blog.dataValues.blog_content}}}</textarea>
+    </div>
+    <div class='blog-form-group'>
+      <button id='edit-blog-btn' type='submit'>Update Blog</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/updateBlog.js"></script>
